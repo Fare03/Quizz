@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h2 id="q1-q"></h2>
+<input type="radio" name="q1" id="q1-a1"><span id="q1-a1-label"></span><br>
+<input type="radio" name="q1" id="q1-a2"><span id="q1-a2-label"></span><br>
+<input type="radio" name="q1" id="q1-a3"><span id="q1-a3-label"></span><br>
+<input type="radio" name="q1" id="q1-a4"><span id="q1-a4-label"></span><br>
+<br>
+<h2 id="q2-q"></h2>
+<input type="radio" name="q2" id="q2-a"><span id="q2-a1-label"></span><br>
+<input type="radio" name="q2" id="q2-a"><span id="q2-a2-label"></span><br>
+<input type="radio" name="q2" id="q2-a"><span id="q2-a3-label"></span><br>
+<input type="radio" name="q2" id="q2-a"><span id="q2-a4-label"></span><br>
+<br>
+<h2 id="q3-q"></h2>
+<input type="radio" name="q3" id="q3-a"><span id="q3-a1-label"></span><br>
+<input type="radio" name="q3" id="q3-a"><span id="q3-a2-label"></span><br>
+<input type="radio" name="q3" id="q3-a"><span id="q3-a3-label"></span><br>
+<input type="radio" name="q3" id="q3-a"><span id="q3-a4-label"></span><br>
+<br>
+<h2 id="q4-q"></h2>
+<input type="radio" name="q4" id="q4-a"><span id="q4-a1-label"></span><br>
+<input type="radio" name="q4" id="q4-a"><span id="q4-a2-label"></span><br>
+<input type="radio" name="q4" id="q4-a"><span id="q4-a3-label"></span><br>
+<input type="radio" name="q4" id="q4-a"><span id="q4-a4-label"></span><br>
+<label for="q4"></label>
+
+
+
+
+    <script>
+
+        
+
+        var kviz = `{"quiz": 
+        {"q1": 
+        {"question": "Which one is correct team name in NBA?",
+        "options": ["New York Bulls","Los Angeles Kings","Golden State Warriros","Huston Rocket"],
+        "answer": "Huston Rocket"}, 
+        
+        "q2": 
+        {"question": "Namaste is a traditional greeting in which Asian language?",
+        "options": ["Hindi","Mandarin","Nepalese","Thai"], 
+        "answer": "Hindi"},
+        
+        "q3": 
+        {"question": "The Spree river flows through which major European capital city?",
+        "options": ["Berlin","Paris","Rome","London"],
+        "answer": "Berlin"},
+        
+        "q4": 
+        {"question": "Which famous artist had both a Rose Period and a Blue Period?",
+        "options": ["Pablo Picasso","Vincent van Gogh","Salvador Dalí","Edgar Degas"],
+        "answer": "Pablo Picasso"}}}`
+
+
+                    /*HEAD QUESTIONS */
+    var h2 = document.getElementById("q1-q")
+    h2.innerHTML = (JSON.parse(kviz).quiz.q1.question)    
+    var h2 = document.getElementById("q2-q")
+    h2.innerHTML = (JSON.parse(kviz).quiz.q2.question)
+    var h2 = document.getElementById("q3-q")
+    h2.innerHTML = (JSON.parse(kviz).quiz.q3.question)
+    var h2 = document.getElementById("q4-q")
+    h2.innerHTML = (JSON.parse(kviz).quiz.q4.question)
+                    /*QUESTION ANSWERS*/
+                    /*Q1-QUESTIONS*/
+    var answers11 = document.getElementById("q1-a1-label")
+    answers11.innerHTML = (JSON.parse(kviz).quiz.q1.options[0])
+    var answers12 = document.getElementById("q1-a2-label")
+    answers12.innerHTML = (JSON.parse(kviz).quiz.q1.options[1])
+    var answers13 = document.getElementById("q1-a3-label")
+    answers13.innerHTML = (JSON.parse(kviz).quiz.q1.options[2])
+    var answers14 = document.getElementById("q1-a4-label")
+    answers14.innerHTML = (JSON.parse(kviz).quiz.q1.options[3])
+                    /*Q2-QUESTIONS*/
+    var answers21 = document.getElementById("q2-a1-label")
+    answers21.innerHTML = (JSON.parse(kviz).quiz.q2.options[0])
+    var answers22 = document.getElementById("q2-a2-label")
+    answers22.innerHTML = (JSON.parse(kviz).quiz.q2.options[1])
+    var answers23 = document.getElementById("q2-a3-label")
+    answers23.innerHTML = (JSON.parse(kviz).quiz.q2.options[2])
+    var answers24 = document.getElementById("q2-a4-label")
+    answers24.innerHTML = (JSON.parse(kviz).quiz.q2.options[3])
+                    /*Q3-QUESTIONS*/
+    var answers31 = document.getElementById("q3-a1-label")
+    answers31.innerHTML = (JSON.parse(kviz).quiz.q3.options[0])
+    var answers32 = document.getElementById("q3-a2-label")
+    answers32.innerHTML = (JSON.parse(kviz).quiz.q3.options[1])
+    var answers33 = document.getElementById("q3-a3-label")
+    answers33.innerHTML = (JSON.parse(kviz).quiz.q3.options[2])
+    var answers44 = document.getElementById("q3-a4-label")
+    answers44.innerHTML = (JSON.parse(kviz).quiz.q3.options[3])
+                    /*Q4-QUESTIONS*/
+    var answers41 = document.getElementById("q4-a1-label")
+    answers41.innerHTML = (JSON.parse(kviz).quiz.q4.options[0])
+    var answers42 = document.getElementById("q4-a2-label")
+    answers42.innerHTML = (JSON.parse(kviz).quiz.q4.options[1])
+    var answers43 = document.getElementById("q4-a3-label")
+    answers43.innerHTML = (JSON.parse(kviz).quiz.q4.options[2])
+    var answers44 = document.getElementById("q4-a4-label")
+    answers44.innerHTML = (JSON.parse(kviz).quiz.q4.options[3])
+
+
+    const TOTAL_QUESTIONS = 4; // just increment this number, automatically work without changing any other code!
+    createQuiz(TOTAL_QUESTIONS);
+
+function createQuiz(NtotalQuestions) {
+  const quizData = JSON.parse(kviz).quiz;
+
+  for (let q = 0; q < NtotalQuestions; q++) {
+    generateHeadQuestions(q);
+
+    for (let a = 0; a < NtotalQuestions; a++) {
+      generateAnswer(q, a);
+    }
+
+    function generateAnswer(questionIndex, answerIndex) {
+      const el = document.getElementById(`q${questionIndex}-a${answerIndex}-label`);
+      const text = quizData[`q${questionIndex}`].options[answerIndex];
+
+      el.textContent = text;
+      saveState(el); // localStorage logic
+    }
+
+    function generateHeadQuestions(questionIndex) {
+      const el = document.getElementById(`q${questionIndex}-q`);
+      const text = quizData[`q${questionIndex}`].question;
+
+      el.textContent = text;
+    }
+
+    function saveState(el) {
+      el.addEventListener("change", () => {
+        localStorage.setItem(el, this.checked);
+      });
+    }
+  }
+}
+    
+
+    
+    
+    
+    
+
+
+
+
+    </script>
+</body>
+</html>
